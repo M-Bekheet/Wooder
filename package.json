@@ -1,0 +1,16 @@
+{
+  "name": "wooder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html ",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "author": "Mahmoud Ahmed",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}

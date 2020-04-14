@@ -1,0 +1,19 @@
+.hero{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title{
+    color: $secondary-color;
+    font-size: 5em;
+    margin-bottom: 40px;
+    letter-spacing: 10px;
+    font-weight: $bold-weight;
+  }
+  .button{
+    justify-self: start;
+    align-self: flex-start;
+    margin-left: -50%;
+  }
+}

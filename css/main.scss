@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+body{
+  // height: 2000px
+  padding-bottom: 200px !important;
+}
+
+// Base
+@import 
+  'base/reset',
+  'base/variables',
+  'base/defaults'; // widely used selectors
+
+
+// Layout
+@import 
+  'layout/wrapper',
+  'layout/header',
+  'layout/hero',
+  'layout/products',
+  'layout/footer';
