@@ -1,8 +1,4 @@
 @charset 'UTF-8';
-body{
-  // height: 2000px
-  padding-bottom: 200px !important;
-}
 
 // Base
 @import 
@@ -17,4 +13,6 @@ body{
   'layout/header',
   'layout/hero',
   'layout/products',
+  'layout/featured_video',
+  'layout/about',
   'layout/footer';

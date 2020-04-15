@@ -1,9 +1,26 @@
+html{
+  scroll-behavior: smooth;
+}
+
 *::selection{
   color: #fff;
   background-color: $main-color;
 }
 
+body{
+  font-family: Arial, $main-font;
+}
+
+section:not(.hero){
+  padding-top: 50px;
+  padding-bottom: 50px;
+  scroll-behavior: smooth;
+}
+
 .button{
+  display: flex;
+    justify-content: center;
+    align-items: center;
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -21,6 +38,7 @@
   }
 }
 .play-button{
+  display: inline-block;
   width: 0;
   height: 0;
   border: none;
@@ -37,5 +55,87 @@ img{
   &:hover{
     box-shadow: 1px 1px 5px 2px rgba(32,32,32,0.1),
   -1px -1px 5px 2px rgba(32,32,32,0.1);
+  }
+}
+
+.bordered{
+  border: 1px solid $secondary-color;
+}
+
+.item-title{
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    span:first-of-type{
+      flex: 1;
+      height: 2px;
+      position: relative;
+      top: -4px;
+      background: #202020;
+    }
+    span:last-of-type{
+      flex: 4;
+      margin-left: 10px;
+      padding-right: 6px;
+
+    }
+  }
+
+.with-line{
+  display: flex;
+  align-items: baseline;
+  > span:first-child{
+    flex: 1;
+    text-align: right;
+    margin-left: 17px;
+    margin-right: 13px;
+    i{
+      width: 50%;
+      height: 4px;
+      background: $secondary-color;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+  }
+  > span:last-child{
+    flex: 5;
+    padding-bottom: 20px;
+  }
+}
+
+.logo{
+    letter-spacing: 3px;
+    flex-basis: 28%;
+    padding-top: 12px; 
+    padding-bottom: 12px; 
+    span{
+      position: relative;
+
+      &:after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        left: -2px;
+        background: $secondary-color;
+        top: calc(50% - 3px)
+      }
+    }
+  }
+
+@media all and (max-width: $desktop-breakpoint){
+  .line{
+    display: none !important;
+  }
+  .with-line {
+    > span:first-of-type, .line{
+      display: none;
+    }
+     > span:last-child {
+       max-width: 500px;
+     }
   }
 }

@@ -1,0 +1,49 @@
+.footer{
+  display: flex;
+  color: #626262;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  background: #000;
+  font-size: 16px;
+  text-align: center;
+
+  *{
+    z-index: 10;
+  }
+
+  .overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.1;
+    z-index: 1;
+    background: url(~/images/rod.jpg);
+    background-size: cover;
+  }
+
+  .logo{
+    color: #fff;
+    text-align: center;
+    flex: 1;
+  }
+
+  .designer, .developer{
+    flex: 2;
+  }
+
+  .designer-name, .developer-name{
+    color: #7d7d7d;
+  }
+}
+
+@media all and (max-width: $tablet-breakpoint){
+  .footer{
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

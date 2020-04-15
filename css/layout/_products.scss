@@ -15,8 +15,8 @@
       .product-info{
         .product-text > span:first-child{
           text-align: left;
-          margin-left: 12px;
-          margin-right: 12px;
+          margin-left: 11px;
+          margin-right: 13px;
         }
 
         .product-button{
@@ -30,28 +30,7 @@
     .product-info{
       flex-basis: 30%;
 
-      .product-text{
-        display: flex;
-        align-items: baseline;
-        > span:first-child{
-          flex: 1;
-          text-align: right;
-          margin-left: 19px;
-          margin-right: 10px;
-          i{
-            width: 50%;
-            height: 4px;
-            background: $secondary-color;
-            display: inline-block;
-            margin-bottom: 4px;
-          }
-        }
-        > span:last-child{
-          flex: 5;
-          padding-top: 20px;
-          padding-bottom: 20px;
-        }
-      }
+      
     }
 
     .product-img{
@@ -61,24 +40,6 @@
     }
   }
 
-  .product-title{
-    text-transform: uppercase;
-    font-size: 40px;
-    letter-spacing: 4px;
-    display: flex;
-    align-items: center;
-    span:first-of-type{
-      flex: 1;
-      height: 2px;
-      background: #202020;
-    }
-    span:last-of-type{
-      flex: 4;
-      margin-left: 10px;
-      padding-right: 6px;
-
-    }
-  }
 
   .product-button{
     color: #000;
@@ -197,7 +158,40 @@
 
 
 @media all and (max-width: $desktop-breakpoint){
-  .product .line{
-    display: none !important;
+  .products{
+    .product {
+      flex-direction: column-reverse;
+      text-align: center;
+      .line{
+        display: none !important;
+      }
+      p{
+        padding: 10px 20px;
+      }
+      .product-button{
+        margin-left: 0;
+      }
+      &:nth-of-type(even){
+        direction: ltr;
+        .product-info .product-button{
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+     .videos-info{
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
+
+@media all and (max-width: $tablet-breakpoint){
+  .videos{
+    .videos-wrapper{
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

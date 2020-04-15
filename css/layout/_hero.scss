@@ -17,3 +17,15 @@
     margin-left: -50%;
   }
 }
+
+@media all and (max-width: $tablet-breakpoint){
+  .hero {
+    .title{
+      font-size: 3em;
+    }
+    .button{
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
