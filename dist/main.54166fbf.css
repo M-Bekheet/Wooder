@@ -39,6 +39,23 @@ section:not(.hero) {
   padding-bottom: 50px;
   scroll-behavior: smooth; }
 
+.logo {
+  letter-spacing: 3px;
+  flex-basis: 28%;
+  padding-top: 12px;
+  padding-bottom: 12px; }
+  .logo span {
+    position: relative; }
+    .logo span:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 6px;
+      left: -2px;
+      background: #bea67c;
+      top: calc(50% - 3px); }
+
 .button {
   display: flex;
   justify-content: center;
@@ -112,22 +129,49 @@ img {
     flex: 5;
     padding-bottom: 20px; }
 
-.logo {
-  letter-spacing: 3px;
-  flex-basis: 28%;
-  padding-top: 12px;
-  padding-bottom: 12px; }
-  .logo span {
-    position: relative; }
-    .logo span:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      width: 100%;
-      height: 6px;
-      left: -2px;
-      background: #bea67c;
-      top: calc(50% - 3px); }
+.modal {
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  right: 0;
+  top: calc(75% - 56.25%);
+  height: 0;
+  width: 80%;
+  margin: auto;
+  padding-top: 56.25%;
+  box-shadow: 0 0px 2px 1px rgba(140, 140, 140, 0.2), 0px 0px 0px 1px rgba(140, 140, 140, 0.2);
+  transition: box-shadow 0.4s ease-in-out;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  .modal.active {
+    display: flex; }
+  .modal .modal-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw; }
+  .modal .close {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    font-size: 29px;
+    color: #fff; }
+    .modal .close:hover {
+      color: #000;
+      background: rgba(255, 255, 255, 0.4); }
+  .modal video, .modal iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto; }
 
 @media all and (max-width: 991px) {
   .line {
@@ -135,7 +179,12 @@ img {
   .with-line > span:first-of-type, .with-line .line {
     display: none; }
   .with-line > span:last-child {
-    max-width: 500px; } }
+    max-width: 500px; }
+  .item-title span:last-of-type {
+    padding-top: 25px; }
+  .modal .close {
+    padding: 5px 12px;
+    font-size: 1.2em; } }
 
 .wrapper {
   background: #000;
@@ -204,20 +253,23 @@ img {
       display: flex;
       padding-left: 15px; }
     .header .nav {
-      display: none; }
+      max-height: 0;
+      transition: all 1s 0s linear;
+      overflow: hidden;
+      margin-bottom: 50px;
+      flex: 1 1 100%;
+      flex-direction: column;
+      text-align: center; }
       .header .nav.open {
-        display: flex;
-        flex: 1 1 100%;
+        max-height: 800px; }
+      .header .nav ul {
         flex-direction: column;
-        text-align: center; }
-        .header .nav.open ul {
-          flex-direction: column;
-          border-top: 1px solid rgba(255, 255, 255, 0.5);
-          line-height: 1.7em; }
-          .header .nav.open ul a {
-            flex-basis: 100%;
-            justify-content: center;
-            padding: 15px 10px; } }
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        line-height: 1.7em; }
+        .header .nav ul a {
+          flex-basis: 100%;
+          justify-content: center;
+          padding: 15px 10px; } }
 
 .hero {
   display: flex;
@@ -443,7 +495,10 @@ img {
   .featured-video h3, .featured-video p {
     text-align: center; }
   .featured-video .section-content .button {
-    margin: auto; } }
+    margin: auto; }
+  .featured-video .section-content p {
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media all and (max-width: 768px) {
   .featured-video p {

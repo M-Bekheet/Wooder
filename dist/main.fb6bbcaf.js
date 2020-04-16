@@ -118,11 +118,48 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-var toggleNav = document.querySelector('.toggle-nav');
-var nav = document.querySelector('.nav');
-toggleNav.addEventListener('click', function () {
-  nav.classList.toggle('open');
-});
+(function () {
+  /*
+    > Toggle Navbar
+  */
+  var toggleNav = document.querySelector('.toggle-nav');
+  var nav = document.querySelector('.nav');
+  toggleNav.addEventListener('click', function () {
+    nav.classList.toggle('open');
+  });
+  /*
+    > Toggle Video Modal
+  */
+
+  var modal = document.querySelector('.modal');
+  document.querySelectorAll('.watch-btn').forEach(function (btn) {
+    return btn.addEventListener('click', function () {
+      modal.classList.add('active');
+    });
+  });
+  var closeBtns = Array.from(document.querySelectorAll('.close'));
+  closeBtns.forEach(function (closeBtn) {
+    return closeBtn.addEventListener('click', function (e) {
+      var modal = this.closest('.modal');
+      var iframe = modal.querySelector('iframe');
+      var video = modal.querySelector('video');
+
+      if (iframe) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+      }
+
+      if (video) {
+        video.pause();
+      }
+
+      modal.classList.remove('active');
+    });
+  });
+  modal.querySelector('.modal-overlay').addEventListener('click', function () {
+    modal.classList.remove('active');
+  });
+})();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -151,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7715" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1572" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

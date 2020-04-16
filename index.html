@@ -37,7 +37,11 @@
       <h1 class="title">Wooder</h1>
 
       <div>
-        <button class="button">Learn More <span class="button-icon">&longrightarrow;</span></button>
+        <button class="button">
+          <a href="#about">
+            Learn More <span class="button-icon">&longrightarrow;</span>
+          </a>
+        </button>
       </div>
     </section>
 
@@ -114,10 +118,10 @@
       <div class="videos-wrapper">
         
         <div class="video">
-          <div class="video-player">
+          <div class="video-player" >
             <img src="images/innovative-design.jpg" alt="Innovative Design">  
             <button class="play-video">
-              <span class="play-button"></span>
+              <span class="play-button watch-btn"></span>
             </button>
           </div>
             <div class="video-info">
@@ -127,10 +131,10 @@
         </div>
 
         <div class="video">
-          <div class="video-player">
+          <div class="video-player" >
             <img src="images/chair.jpg" alt="Chair">
             <button class="play-video">
-              <span class="play-button"></span>
+              <span class="play-button watch-btn"></span>
             </button>
             </div>
             <div class="video-info">
@@ -142,7 +146,7 @@
           <div class="video-player">
             <img src="images/desk.jpg" alt="Desk">
             <button class="play-video">
-              <span class="play-button"></span>
+              <span class="play-button watch-btn"></span>
             </button>
             </div>
             <div class="video-info">
@@ -183,10 +187,17 @@
           </div>
         </div>
 
-        <button class="button"><span class="play-button"></span><span>Watch Video</span></button>
+        <button class="button watch-btn"><span class="play-button"></span><span>Watch Video</span></button>
+
       </div>
   </section>
 
+    <div class="modal furniture-video">
+      <div class="modal-overlay"></div>
+      <button class="close button">X</button>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PZ8P-hUMrj8" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
   <section class="about-section" id="about">
     <img src="images/men.jpg" alt="Models">
