@@ -133,7 +133,6 @@ img{
   z-index: 999999;
   left: 0;
   right: 0;
-  // top: calc(75% - 56.25%);
   top: 60px;
   bottom: 0;
   height: 0;
@@ -170,7 +169,6 @@ img{
     color: #fff;
 
     &:hover{
-      // color: #000;
       background: rgba(255,255,255,0.4)
     }
   }
@@ -178,7 +176,6 @@ img{
   video, iframe {
     position: absolute;
     top: 100px;
-    // left: 0;
     width: 80%;
     max-width: 600px;
     height: 80%;
@@ -212,3 +209,11 @@ img{
     }
   }
 }
+
+@media all and (max-width: $tablet-breakpoint){
+  .modal .close {
+    top: -40px;
+  }
+  .modal video, .modal iframe{ top: 0}
+}
+
